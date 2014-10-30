@@ -9,12 +9,25 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "WCMAppDelegate.h"
 #import "WCMViewController.h"
+#import "WCMGPSPoints.h"
+#import "WCMDatabase.h"
 
 @implementation WCMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSLog(@"The application has finished loading and will now run more code");
+    
+    NSArray *GPSPoints = [WCMDatabase database].GPSPoints;
+    for (WCMGPSPoints *points in GPSPoints)
+    {
+        NSLog(@"array: %@", points.latitude);
+        NSLog(@"array: %@", points.longitude);
+    }
+    
     [GMSServices provideAPIKey:@"AIzaSyCLsy1M5Nd6uSgQKIhZk9S1nASosjZPi2o"];
+    
+    
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     WCMViewController *viewController = [[WCMViewController alloc] initWithNibName:@"WCMViewController" bundle:nil];
