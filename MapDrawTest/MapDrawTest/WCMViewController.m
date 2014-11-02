@@ -7,6 +7,8 @@
 //
 #import <GoogleMaps/GoogleMaps.h>
 #import "WCMViewController.h"
+#import "WCMGPSPoints.h"
+#import "WCMDatabase.h"
 
 @interface WCMViewController ()
 
@@ -28,13 +30,13 @@
     mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     mapView_.myLocationEnabled = YES;
     self.view = mapView_;
-    NSMutableArray *lat = [NSMutableArray array];
+ /*   NSMutableArray *lat = [NSMutableArray array];
     NSMutableArray *lon = [NSMutableArray array];
     
     NSString* filePath = [[NSBundle mainBundle] pathForResource:@"greenFromRiver"
                                                          ofType:@"csv"];
     
-   // NSString *pathName = @"*/Locations/greenFromRiver.csv";  /// fill in the file's pathname
+   // NSString *pathName = @"Locations/greenFromRiver.csv";  /// fill in the file's pathname
     NSFileManager *fm = [NSFileManager defaultManager];
     if ([fm fileExistsAtPath:filePath]) {
        NSString *lines = [NSString stringWithContentsOfFile:filePath];
@@ -48,20 +50,35 @@
             [lon addObject:columns[1]];
         }
        
-    }
+    } */
     
     
     GMSMutablePath *path = [GMSMutablePath path];
-    for(int i=0;i<200;i++){
+    
+    NSArray *GPSPoints = [WCMDatabase database].GPSPoints;
+    int i=0;
+    for (WCMGPSPoints *points in GPSPoints)
+    {
+        while(i < 1689){ //try to find better iterator method
+            double temparyLat= [points.latitude[i] doubleValue];
+            double temparyLon= [points.longitude[i] doubleValue];
+            [path addCoordinate:CLLocationCoordinate2DMake(temparyLat,temparyLon)];
+            i++;
+        }
+    }
+
+    
+    
+   /* for(int i=0;i<200;i++){
         double temparyLat= [lat[i] doubleValue];
         double temparyLon= [lon[i] doubleValue];
     [path addCoordinate:CLLocationCoordinate2DMake(temparyLat,temparyLon)];
-    }
+    }*/
     
     GMSPolyline *basicRoute = [GMSPolyline polylineWithPath:path];
     basicRoute.geodesic=YES;
     basicRoute.strokeColor = [UIColor greenColor];
-    mapView_.mapType = kGMSTypeSatellite;
+    mapView_.mapType = kGMSTypeTerrain;
     basicRoute.map = mapView_;
     
 
