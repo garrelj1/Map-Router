@@ -1,3 +1,4 @@
+
 //
 //  WCMViewController.m
 //  MapDrawTest
@@ -12,6 +13,9 @@
 
 @interface WCMViewController ()
 
+//@property (nonatomic,weak) IBOutlet UILabel *satillite;
+
+
 @end
 
 @implementation WCMViewController{
@@ -23,34 +27,34 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     // Create a GMSCameraPosition that tells the map to display the
-    // coordinate -33.86,151.20 at zoom level 6.
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:40.298409
                                                             longitude:-74.867093
                                                                  zoom:15];
-    mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    CGRect bounds = CGRectMake( 0, 0, 2048, 1536);
+    mapView_ = [GMSMapView mapWithFrame:bounds camera:camera];
     mapView_.myLocationEnabled = YES;
-    self.view = mapView_;
- /*   NSMutableArray *lat = [NSMutableArray array];
-    NSMutableArray *lon = [NSMutableArray array];
-    
-    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"greenFromRiver"
-                                                         ofType:@"csv"];
-    
-   // NSString *pathName = @"Locations/greenFromRiver.csv";  /// fill in the file's pathname
-    NSFileManager *fm = [NSFileManager defaultManager];
-    if ([fm fileExistsAtPath:filePath]) {
-       NSString *lines = [NSString stringWithContentsOfFile:filePath];
-        
-
-        
-       NSArray* rows = [lines componentsSeparatedByString:@"\n"];
-        for (NSString *row in rows){
-            NSArray* columns = [row componentsSeparatedByString:@","];
-            [lat addObject:columns[0]];
-            [lon addObject:columns[1]];
-        }
-       
-    } */
+    [self.view insertSubview:mapView_ atIndex:0];
+    /*   NSMutableArray *lat = [NSMutableArray array];
+     NSMutableArray *lon = [NSMutableArray array];
+     
+     NSString* filePath = [[NSBundle mainBundle] pathForResource:@"greenFromRiver"
+     ofType:@"csv"];
+     
+     // NSString *pathName = @"Locations/greenFromRiver.csv";  /// fill in the file's pathname
+     NSFileManager *fm = [NSFileManager defaultManager];
+     if ([fm fileExistsAtPath:filePath]) {
+     NSString *lines = [NSString stringWithContentsOfFile:filePath];
+     
+     
+     
+     NSArray* rows = [lines componentsSeparatedByString:@"\n"];
+     for (NSString *row in rows){
+     NSArray* columns = [row componentsSeparatedByString:@","];
+     [lat addObject:columns[0]];
+     [lon addObject:columns[1]];
+     }
+     
+     } */
     
     
     GMSMutablePath *path = [GMSMutablePath path];
@@ -66,14 +70,14 @@
             i++;
         }
     }
-
     
     
-   /* for(int i=0;i<200;i++){
-        double temparyLat= [lat[i] doubleValue];
-        double temparyLon= [lon[i] doubleValue];
-    [path addCoordinate:CLLocationCoordinate2DMake(temparyLat,temparyLon)];
-    }*/
+    
+    /* for(int i=0;i<200;i++){
+     double temparyLat= [lat[i] doubleValue];
+     double temparyLon= [lon[i] doubleValue];
+     [path addCoordinate:CLLocationCoordinate2DMake(temparyLat,temparyLon)];
+     }*/
     
     GMSPolyline *basicRoute = [GMSPolyline polylineWithPath:path];
     basicRoute.geodesic=YES;
@@ -81,14 +85,25 @@
     mapView_.mapType = kGMSTypeTerrain;
     basicRoute.map = mapView_;
     
-
-   
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+
+- (IBAction)sattiliteSwitch:(id)sender{
+    if(mapView_.mapType == kGMSTypeTerrain){
+        mapView_.mapType = kGMSTypeSatellite;
+    }else{
+        mapView_.mapType = kGMSTypeTerrain;
+    }
+    
 }
 
 @end
