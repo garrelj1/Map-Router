@@ -59,11 +59,11 @@
     
     GMSMutablePath *path = [GMSMutablePath path];
     
-    NSArray *GPSPoints = [WCMDatabase database].GPSPoints;
+    NSArray *YellowPoints = [WCMDatabase database].YellowTrailPoints;
     int i=0;
-    for (WCMGPSPoints *points in GPSPoints)
+    for (WCMGPSPoints *points in YellowPoints)
     {
-        while(i < 1689){ //try to find better iterator method
+        while(i < 209){ //try to find better iterator method
             double temparyLat= [points.latitude[i] doubleValue];
             double temparyLon= [points.longitude[i] doubleValue];
             [path addCoordinate:CLLocationCoordinate2DMake(temparyLat,temparyLon)];
@@ -79,11 +79,78 @@
      [path addCoordinate:CLLocationCoordinate2DMake(temparyLat,temparyLon)];
      }*/
     
-    GMSPolyline *basicRoute = [GMSPolyline polylineWithPath:path];
-    basicRoute.geodesic=YES;
-    basicRoute.strokeColor = [UIColor greenColor];
+    GMSPolyline *basic1Route = [GMSPolyline polylineWithPath:path];
+    basic1Route.geodesic=YES;
+    basic1Route.strokeColor = [UIColor yellowColor];
     mapView_.mapType = kGMSTypeTerrain;
-    basicRoute.map = mapView_;
+    basic1Route.map = mapView_;
+    
+    
+    GMSMutablePath *Bluepath = [GMSMutablePath path];
+    
+    NSArray *BluePoints = [WCMDatabase database].BlueTrailPoints;
+   i=0;
+    for (WCMGPSPoints *points in BluePoints)
+    {
+        while(i < 789){ //try to find better iterator method
+            double temparyLat= [points.latitude[i] doubleValue];
+            double temparyLon= [points.longitude[i] doubleValue];
+            [Bluepath addCoordinate:CLLocationCoordinate2DMake(temparyLat,temparyLon)];
+            i++;
+        }
+    }
+    
+    
+    
+    GMSPolyline *basic2Route = [GMSPolyline polylineWithPath:Bluepath];
+    basic2Route.geodesic=YES;
+    basic2Route.strokeColor = [UIColor blueColor];
+    
+    basic2Route.map = mapView_;
+    
+    GMSMutablePath *Greenpath = [GMSMutablePath path];
+    
+    NSArray *GreenPoints = [WCMDatabase database].GreenTrailPoints;
+    i=0;
+    for (WCMGPSPoints *points in GreenPoints)
+    {
+        while(i < 290){ //try to find better iterator method
+            double temparyLat= [points.latitude[i] doubleValue];
+            double temparyLon= [points.longitude[i] doubleValue];
+            [Greenpath addCoordinate:CLLocationCoordinate2DMake(temparyLat,temparyLon)];
+            i++;
+        }
+    }
+    
+    
+    
+    GMSPolyline *basic3Route = [GMSPolyline polylineWithPath:Greenpath];
+    basic3Route.geodesic=YES;
+    basic3Route.strokeColor = [UIColor greenColor];
+    basic3Route.map = mapView_;
+    
+    GMSMutablePath *Redpath = [GMSMutablePath path];
+    
+    NSArray *RedPoints = [WCMDatabase database].RedTrailPoints;
+    i=0;
+    for (WCMGPSPoints *points in RedPoints)
+    {
+        while(i < 401){ //try to find better iterator method
+            double temparyLat= [points.latitude[i] doubleValue];
+            double temparyLon= [points.longitude[i] doubleValue];
+            [Redpath addCoordinate:CLLocationCoordinate2DMake(temparyLat,temparyLon)];
+            i++;
+        }
+    }
+    
+    
+    
+    GMSPolyline *basic4Route = [GMSPolyline polylineWithPath:Redpath];
+    basic4Route.geodesic=YES;
+    basic4Route.strokeColor = [UIColor redColor];
+    basic4Route.map = mapView_;
+
+
     
     
     
@@ -105,5 +172,7 @@
     }
     
 }
+
+
 
 @end
