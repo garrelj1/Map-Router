@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Graph.cpp"
+#import <GoogleMaps/GoogleMaps.h>
+#import "WCMGPSPoints.h"
 
 @interface WCMViewController : UIViewController
+
+WCMGPSPoints* getClosest();
+
+GMSMutablePath* findPath(double distance);
+
+NSString* longestCommonPrefix(NSString* currPath, NSArray* visited);
 
 @end
