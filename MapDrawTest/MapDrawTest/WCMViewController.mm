@@ -24,9 +24,10 @@ GMSMapView *mapView_;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    // Create a GMSCameraPosition that tells the map to display the
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:40.298409
-                                                            longitude:-74.867093
+    // Create a GMSCameraPosition that tells the map to display the lat 40.3 lon -74.84
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:40.30
+                                                            longitude:-74.84
+                                 
                                                                  zoom:15];
     CGRect bounds = CGRectMake( 0, 0, 2048, 1536);
     mapView_ = [GMSMapView mapWithFrame:bounds camera:camera];
@@ -148,11 +149,11 @@ GMSMapView *mapView_;
     
     // Get distance from user. Test value
     double someDistance = 2.0;
-    
-    GMSMutablePath *myPath = findPath(someDistance);
-    
+    NSLog(@"Going In");
+ GMSMutablePath *myPath = [self findPath:someDistance];
+    NSLog(@"made it out");
     // Draw path for user to take
-    GMSPolyline *basic5Route = [GMSPolyline polylineWithPath:myPath];
+   GMSPolyline *basic5Route = [GMSPolyline polylineWithPath:myPath];
     basic5Route.geodesic=YES;
     basic5Route.strokeColor = [UIColor orangeColor];
     basic5Route.map = mapView_;
@@ -179,6 +180,7 @@ GMSMapView *mapView_;
 // Find the user's location and the nearest point
 - (WCMGPSPoints*)getClosest
 {
+    NSLog(@"welcome to get Closest");
     WCMGPSPoints* closest;
     double closestDistance = 100.00;
     double currentLatitude, currentLongitude;
@@ -186,10 +188,14 @@ GMSMapView *mapView_;
     int i = 0;
     
     NSArray *allPoints = [WCMDatabase database].GPSPoints;
+    NSLog(@"did make here");
     for (WCMGPSPoints *points in allPoints)
     {
+        NSLog(@"Running outa things to say");
         while (i < 1689) { //try to find a better iterator method
+          //  printf("Int number: %u\n", i);
             distance =  pow( pow( fabs(currentLatitude - [points.latitude[i] doubleValue]), 2) + pow( fabs(currentLongitude - [points.longitude[i] doubleValue]), 2), 0.5);
+            i++;
         }
         
         if (distance < closestDistance)
@@ -210,26 +216,33 @@ GMSMapView *mapView_;
     int i = 0;
     
     NSArray *allPoints = [WCMDatabase database].GPSPoints;
-    
+    NSLog(@"Entering Loop");
     do
     {
         while (walked < 0.9 * distance)
         {
+            NSLog(@"Did we make it");
             for (WCMGPSPoints *points in allPoints)
             {
-                while (points != getClosest())
+                NSLog(@"How Bout here");
+                while (points != [self getClosest])
                 {
                     // do nothing;
                     i++;
                 }
                 
-                if (i < 1689)
+                
+                
+                if (i < 1689 )
                 {
+                    NSLog(@"Something");
                     double temparyLat= [points.latitude[i] doubleValue];
                     double temparyLon= [points.longitude[i] doubleValue];
                     [myPath addCoordinate:CLLocationCoordinate2DMake(temparyLat,temparyLon)];
+                    NSLog(@"and Here");
                     i++;
                 }
+                
             }
         }
         

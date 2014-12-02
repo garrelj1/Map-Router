@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		061A35C919FE8D94006325AE /* WCMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 061A35C819FE8D94006325AE /* WCMDatabase.m */; };
+		061A35C919FE8D94006325AE /* WCMDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 061A35C819FE8D94006325AE /* WCMDatabase.mm */; };
 		06CDC2B91A027809009B1CC6 /* MapRouter.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 06CDC2B61A027809009B1CC6 /* MapRouter.sqlite3 */; };
 		06CDC2BA1A027809009B1CC6 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 06CDC2B71A027809009B1CC6 /* sqlite3.c */; };
-		06CDC2BD1A0279D1009B1CC6 /* WCMGPSPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CDC2BC1A0279D1009B1CC6 /* WCMGPSPoints.m */; };
+		06CDC2BD1A0279D1009B1CC6 /* WCMGPSPoints.mm in Sources */ = {isa = PBXBuildFile; fileRef = 06CDC2BC1A0279D1009B1CC6 /* WCMGPSPoints.mm */; };
+		3D1634991A2E541100EC02BA /* trail.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3D1634981A2E541100EC02BA /* trail.gpx */; };
 		3D5CA7F219E6C6F000955423 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5CA7F119E6C6F000955423 /* GoogleMaps.framework */; };
 		3D87839219E2DA60007E09BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D87839119E2DA60007E09BF /* Foundation.framework */; };
 		3D87839419E2DA60007E09BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D87839319E2DA60007E09BF /* CoreGraphics.framework */; };
 		3D87839619E2DA60007E09BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D87839519E2DA60007E09BF /* UIKit.framework */; };
 		3D87839C19E2DA60007E09BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D87839A19E2DA60007E09BF /* InfoPlist.strings */; };
-		3D87839E19E2DA60007E09BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D87839D19E2DA60007E09BF /* main.m */; };
-		3D8783A219E2DA60007E09BF /* WCMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8783A119E2DA60007E09BF /* WCMAppDelegate.m */; };
-		3D8783AB19E2DA60007E09BF /* WCMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8783AA19E2DA60007E09BF /* WCMViewController.m */; };
+		3D87839E19E2DA60007E09BF /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D87839D19E2DA60007E09BF /* main.mm */; };
+		3D8783A219E2DA60007E09BF /* WCMAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D8783A119E2DA60007E09BF /* WCMAppDelegate.mm */; };
+		3D8783AB19E2DA60007E09BF /* WCMViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D8783AA19E2DA60007E09BF /* WCMViewController.mm */; };
 		3D8783AD19E2DA60007E09BF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D8783AC19E2DA60007E09BF /* Images.xcassets */; };
 		3D8783B419E2DA60007E09BF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D8783B319E2DA60007E09BF /* XCTest.framework */; };
 		3D8783B519E2DA60007E09BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D87839119E2DA60007E09BF /* Foundation.framework */; };
@@ -41,6 +42,7 @@
 		3D8783EC19E2E162007E09BF /* WCMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D8783EB19E2E161007E09BF /* WCMViewController.xib */; };
 		3DA1618A19F876FA0049D5A9 /* greenFromRiver.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DA1618919F876FA0049D5A9 /* greenFromRiver.csv */; };
 		3DA1618E19F878D90049D5A9 /* Blue.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3DA1618D19F878D90049D5A9 /* Blue.csv */; };
+		3DD968471A2E40580077F035 /* default.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3DD968461A2E40580077F035 /* default.gpx */; };
 		3DFDFD3919F54CFA0038F4F6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFDFD3819F54CFA0038F4F6 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
@@ -56,12 +58,13 @@
 
 /* Begin PBXFileReference section */
 		061A35C719FE8D94006325AE /* WCMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCMDatabase.h; sourceTree = "<group>"; };
-		061A35C819FE8D94006325AE /* WCMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCMDatabase.m; sourceTree = "<group>"; };
+		061A35C819FE8D94006325AE /* WCMDatabase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCMDatabase.mm; sourceTree = "<group>"; };
 		06CDC2B61A027809009B1CC6 /* MapRouter.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MapRouter.sqlite3; sourceTree = "<group>"; };
 		06CDC2B71A027809009B1CC6 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
 		06CDC2B81A027809009B1CC6 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 		06CDC2BB1A0279D1009B1CC6 /* WCMGPSPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCMGPSPoints.h; sourceTree = "<group>"; };
-		06CDC2BC1A0279D1009B1CC6 /* WCMGPSPoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCMGPSPoints.m; sourceTree = "<group>"; };
+		06CDC2BC1A0279D1009B1CC6 /* WCMGPSPoints.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCMGPSPoints.mm; sourceTree = "<group>"; };
+		3D1634981A2E541100EC02BA /* trail.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = trail.gpx; sourceTree = "<group>"; };
 		3D5CA7F119E6C6F000955423 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		3D87838E19E2DA60007E09BF /* MapDrawTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapDrawTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D87839119E2DA60007E09BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -69,12 +72,12 @@
 		3D87839519E2DA60007E09BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3D87839919E2DA60007E09BF /* MapDrawTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MapDrawTest-Info.plist"; sourceTree = "<group>"; };
 		3D87839B19E2DA60007E09BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3D87839D19E2DA60007E09BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3D87839D19E2DA60007E09BF /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		3D87839F19E2DA60007E09BF /* MapDrawTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MapDrawTest-Prefix.pch"; sourceTree = "<group>"; };
 		3D8783A019E2DA60007E09BF /* WCMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCMAppDelegate.h; sourceTree = "<group>"; };
-		3D8783A119E2DA60007E09BF /* WCMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCMAppDelegate.m; sourceTree = "<group>"; };
+		3D8783A119E2DA60007E09BF /* WCMAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = WCMAppDelegate.mm; sourceTree = "<group>"; };
 		3D8783A919E2DA60007E09BF /* WCMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCMViewController.h; sourceTree = "<group>"; };
-		3D8783AA19E2DA60007E09BF /* WCMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCMViewController.m; sourceTree = "<group>"; };
+		3D8783AA19E2DA60007E09BF /* WCMViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = WCMViewController.mm; sourceTree = "<group>"; };
 		3D8783AC19E2DA60007E09BF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3D8783B219E2DA60007E09BF /* MapDrawTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapDrawTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8783B319E2DA60007E09BF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -97,6 +100,7 @@
 		3D8783EB19E2E161007E09BF /* WCMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WCMViewController.xib; path = ../WCMViewController.xib; sourceTree = "<group>"; };
 		3DA1618919F876FA0049D5A9 /* greenFromRiver.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = greenFromRiver.csv; sourceTree = "<group>"; };
 		3DA1618D19F878D90049D5A9 /* Blue.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Blue.csv; sourceTree = "<group>"; };
+		3DD968461A2E40580077F035 /* default.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = default.gpx; sourceTree = "<group>"; };
 		3DFDFD3819F54CFA0038F4F6 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -141,6 +145,8 @@
 		3D87838519E2DA60007E09BF = {
 			isa = PBXGroup;
 			children = (
+				3D1634981A2E541100EC02BA /* trail.gpx */,
+				3DD968461A2E40580077F035 /* default.gpx */,
 				3DA1618819F876FA0049D5A9 /* Locations */,
 				3D87839719E2DA60007E09BF /* MapDrawTest */,
 				3D8783B919E2DA60007E09BF /* MapDrawTestTests */,
@@ -188,14 +194,14 @@
 			isa = PBXGroup;
 			children = (
 				06CDC2BB1A0279D1009B1CC6 /* WCMGPSPoints.h */,
-				06CDC2BC1A0279D1009B1CC6 /* WCMGPSPoints.m */,
+				06CDC2BC1A0279D1009B1CC6 /* WCMGPSPoints.mm */,
 				061A35C719FE8D94006325AE /* WCMDatabase.h */,
-				061A35C819FE8D94006325AE /* WCMDatabase.m */,
+				061A35C819FE8D94006325AE /* WCMDatabase.mm */,
 				3D8783A019E2DA60007E09BF /* WCMAppDelegate.h */,
-				3D8783A119E2DA60007E09BF /* WCMAppDelegate.m */,
+				3D8783A119E2DA60007E09BF /* WCMAppDelegate.mm */,
 				3D8783EB19E2E161007E09BF /* WCMViewController.xib */,
 				3D8783A919E2DA60007E09BF /* WCMViewController.h */,
-				3D8783AA19E2DA60007E09BF /* WCMViewController.m */,
+				3D8783AA19E2DA60007E09BF /* WCMViewController.mm */,
 				3D8783AC19E2DA60007E09BF /* Images.xcassets */,
 				3D87839819E2DA60007E09BF /* Supporting Files */,
 			);
@@ -210,7 +216,7 @@
 				06CDC2B81A027809009B1CC6 /* sqlite3.h */,
 				3D87839919E2DA60007E09BF /* MapDrawTest-Info.plist */,
 				3D87839A19E2DA60007E09BF /* InfoPlist.strings */,
-				3D87839D19E2DA60007E09BF /* main.m */,
+				3D87839D19E2DA60007E09BF /* main.mm */,
 				3D87839F19E2DA60007E09BF /* MapDrawTest-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -328,8 +334,10 @@
 				3D8783EC19E2E162007E09BF /* WCMViewController.xib in Resources */,
 				3D8783CC19E2DB5D007E09BF /* GoogleMaps.bundle in Resources */,
 				3D8783AD19E2DA60007E09BF /* Images.xcassets in Resources */,
+				3DD968471A2E40580077F035 /* default.gpx in Resources */,
 				06CDC2B91A027809009B1CC6 /* MapRouter.sqlite3 in Resources */,
 				3D87839C19E2DA60007E09BF /* InfoPlist.strings in Resources */,
+				3D1634991A2E541100EC02BA /* trail.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,11 +356,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D8783A219E2DA60007E09BF /* WCMAppDelegate.m in Sources */,
-				3D8783AB19E2DA60007E09BF /* WCMViewController.m in Sources */,
-				061A35C919FE8D94006325AE /* WCMDatabase.m in Sources */,
-				06CDC2BD1A0279D1009B1CC6 /* WCMGPSPoints.m in Sources */,
-				3D87839E19E2DA60007E09BF /* main.m in Sources */,
+				3D8783A219E2DA60007E09BF /* WCMAppDelegate.mm in Sources */,
+				3D8783AB19E2DA60007E09BF /* WCMViewController.mm in Sources */,
+				061A35C919FE8D94006325AE /* WCMDatabase.mm in Sources */,
+				06CDC2BD1A0279D1009B1CC6 /* WCMGPSPoints.mm in Sources */,
+				3D87839E19E2DA60007E09BF /* main.mm in Sources */,
 				06CDC2BA1A027809009B1CC6 /* sqlite3.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
