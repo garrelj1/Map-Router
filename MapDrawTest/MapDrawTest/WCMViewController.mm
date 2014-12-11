@@ -147,7 +147,8 @@ GMSMapView *mapView_;
     basic4Route.strokeColor = [UIColor redColor];
     basic4Route.map = mapView_;
     
-    // Get distance from user. Test value
+   /*  Commented out do to impossible time needed to run
+   // Get distance from user. Test value
     double someDistance = 2.0;
     NSLog(@"Going In");
  GMSMutablePath *myPath = [self findPath:someDistance];
@@ -156,7 +157,7 @@ GMSMapView *mapView_;
    GMSPolyline *basic5Route = [GMSPolyline polylineWithPath:myPath];
     basic5Route.geodesic=YES;
     basic5Route.strokeColor = [UIColor orangeColor];
-    basic5Route.map = mapView_;
+    basic5Route.map = mapView_; */
     
 }
 
